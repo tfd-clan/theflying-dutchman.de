@@ -23,6 +23,7 @@ $tsusername = $data['tsusername'];
 $gamertag = $data['gamertag'];
 $birthday = $data['birthday'];
 $introduction = $data['introduction'];
+$phone = $data['phone'];
 
 $db = new mysqli($servername, $username, $password, $db_name);
 
@@ -33,7 +34,7 @@ if ($db->connect_error) {
 
 mysqli_report(MYSQLI_REPORT_ALL);
 
-$stmt = $db->prepare("INSERT INTO members (firstname, lastname, tsusername, gamertag, birthday, introduction) VALUES (?,?,?,?,?,?)");
+$stmt = $db->prepare("INSERT INTO members (firstname, lastname, tsusername, gamertag, birthday, introduction, phone) VALUES (?,?,?,?,?,?,?)");
 
 if (!$stmt) {
     $response = array(
@@ -44,7 +45,7 @@ if (!$stmt) {
     return;
 }
 
-$stmt->bind_param("ssssss", $firstname, $lastname, $tsusername, $gamertag, $birthday, $introduction);
+$stmt->bind_param("sssssss", $firstname, $lastname, $tsusername, $gamertag, $birthday, $introduction, $phone);
 $stmt->execute();
 
 $stmt->close();
