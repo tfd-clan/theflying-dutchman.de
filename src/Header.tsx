@@ -1,23 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC } from 'react';
 import './App.css';
 import { NavLink } from 'react-router-dom';
 
-function Header() {
+const Header: FC = () => {
   return (
-    <header>
-        <div className="title">
-            <NavLink to="/"><img src="/img/logo.png" width="auto" height="80"/></NavLink>
-            <h1>The Flying Dutchman</h1>
-        </div>
-        <div className="topnav">
-            <NavLink to="/about">
-                Who are we?
+      <header className="topnav">
+          <div className="left-header">
+            <NavLink to="/">
+                  Home
             </NavLink>
+            <NavLink to="/creator">
+                Creator
+            </NavLink>
+            <NavLink to="/about">
+                Teams
+            </NavLink>
+          </div>
+            <NavLink to="/"><img src="/img/logo.png" width="auto" height="80" className="center-header" /></NavLink>
+          <div className="right-header">
+            <a href='https://discord.gg/FGKMngN7wC'>
+                  Discord
+            </a>
+            <a href='ts3server://ts.theflying-dutchman.de'>
+                Teamspeak
+            </a>
             <NavLink to="/join" id="member-button">
                 Join Us!
             </NavLink>
-        </div>
+          </div>
     </header>
   );
 }

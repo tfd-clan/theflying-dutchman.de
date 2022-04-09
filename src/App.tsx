@@ -1,21 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import { NavLink, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Header';
-import { NavLink, Routes, Route } from 'react-router-dom';
 import Home from './Home';
-import About from './About';
+import Teams from './Teams';
 import Join from './Join';
+import Creator from './Creator';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-      <Route path='/' element={<Home />}></Route>
-      <Route path='/about' element={<About/>}></Route>
-      <Route path='/join' element={<Join/>}></Route>
-    </Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/teams' element={<Teams />}></Route>
+        <Route path='/join' element={<Join />}></Route>
+        <Route path='/creator' element={<Creator />}></Route>
+      </Routes>
     </div>
   );
 }

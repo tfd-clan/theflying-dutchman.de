@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './App.css';
 
-const Home:FC = () => {
+const Creator: FC = () => {
   return (
     <div>
       <div className='hero-image'>
@@ -14,4 +14,4 @@ const Home:FC = () => {
   );
 }
 
-export default Home;
+export default Creator;
