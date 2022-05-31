@@ -4,8 +4,8 @@ import './App.css';
 import Header from './Header';
 import Home from './Home';
 import Teams from './Teams';
-import Join from './Join';
 import Creator from './Creator';
+import Join from './Join';
 
 function App() {
   return (
